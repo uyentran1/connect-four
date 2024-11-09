@@ -1,24 +1,38 @@
 public class Disc {
     private char symbol;
-    private int playersColumn; // position int[] or column?
-    private int gridColumn; // position int[] or column?
+    private int row;
+    private int playerInputColumn; 
+    private int gridColumn; 
 
-    public Disc(char symbol, int playersColumn) {
+    /**
+     * Constructs a Disc with a given symbol and player's input column
+     * @param symbol the symbol (X or O) representing the player
+     * @param playerInputColumn the 1-based column number input by the player
+     */
+    public Disc(char symbol, int playerInputColumn) {
         this.symbol = symbol;
-        this.playersColumn = playersColumn;
-        // Grid column starts from 0, Player's column starts from 1
-        this.gridColumn = playersColumn - 1;
+        this.playerInputColumn = playerInputColumn;
+        // Convert player input (starts from 1) to grid column (starts from 0)
+        this.gridColumn = playerInputColumn - 1;
     }
 
     public char getSymbol() {
         return symbol;
     }
 
+    public int getRow() {
+        return row;
+    }
+
     public int getPlayersColumn() {
-        return playersColumn;
+        return playerInputColumn;
     }
     
     public int getGridColumn() {
         return gridColumn;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
     }
 }
