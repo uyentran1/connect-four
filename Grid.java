@@ -71,7 +71,7 @@ public class Grid {
     private boolean checkLine(int row, int col, int rowIncrement, int colIncrement, char symbol) {
         int count = 0;
 
-        // Check both directions along the line
+        // Check 3 adjacent discs in both directions along the line
         for (int i = -3; i <= 3; i++) {
             int r = row + i * rowIncrement;
             int c = col + i * colIncrement;
@@ -86,13 +86,24 @@ public class Grid {
         return false;
     }
 
-    // Visualise the current state of the grid
+    /**
+     * Visualises the current state of the grid
+     * The grid visual comprises a header row illustrating the column numbers,
+     * followed by disc rows holding discs dropped by the players
+     */
     @Override
     public String toString() {
         StringBuilder gridVisual = new StringBuilder();
-        String firstRowVisual = String.format("\n| 1 | 2 | 3 | 4 | 5 | 6 | 7 |\n");
-        gridVisual.append(firstRowVisual);
+        StringBuilder headerRowVisual = new StringBuilder("\n");
 
+        // Use a loop to create the header row with column numbers
+        for (int i = 1; i <= WIDTH; i++) {
+            headerRowVisual.append(String.format("| %d ", i));
+        }
+        headerRowVisual.append("|\n");
+        gridVisual.append(headerRowVisual);
+
+        // Append each row of the grid with cell contents
         for (char[] row : grid) {
             StringBuilder discRowVisual = new StringBuilder("|");
             for (char cell : row) {
