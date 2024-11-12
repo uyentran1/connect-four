@@ -5,19 +5,32 @@ public class Player {
     private String name;
     private char symbol;
     private Grid grid;
+    private int score;
 
-    public Player (String name, char symbol, Grid grid) {
+    public Player (String name, char symbol) {
         this.name = name;
         this.symbol = symbol;
+        this.score = 0; 
+    }
+
+    public void setGrid(Grid grid) {
         this.grid = grid;
+    }
+    
+    public char getSymbol() {
+        return symbol;
     }
 
     public String getName() {
         return name;
     }
 
-    public char getSymbol() {
-        return symbol;
+    public int getScore() {
+        return score;
+    }
+
+    public void incrementScore() {
+        score++;
     }
 
     /**
