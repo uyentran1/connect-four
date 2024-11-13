@@ -54,10 +54,10 @@ public class ConnectFour {
                 if (gameGrid.haveWinner(latestDisc)) {
                     gameOver = true;
                     nextPlayer.incrementScore();
-                    System.out.printf("Gameover. %s wins this round!\n", nextPlayer.getName());
+                    System.out.printf("Game over. %s wins this round!\n", nextPlayer.getName());
                 } else if (gameGrid.isFull()) {
                     gameOver = true;
-                    System.out.println("Gameover. It's a tie!");
+                    System.out.println("Game over. It's a tie!");
                 }
 
                 // Switch player for the next turn

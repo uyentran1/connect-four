@@ -4,8 +4,8 @@ public class Grid {
     private static final char EMPTY_CELL = ' ';
     private char[][] grid;
 
+    // Initialise a new grid with empty cells
     public Grid() {
-        // Initialise a new grid with empty cells
         this.grid = new char[HEIGHT][WIDTH];
         for (char[] row : grid) {
             for (int col = 0; col < row.length; col++) {
