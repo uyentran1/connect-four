@@ -58,7 +58,7 @@ public class Player {
                 System.out.println("\nInvalid column. Please choose a number between 1 and 7.");
             // Check if the chosen column is already full
             } else if (grid.columnIsFull(column)) {
-                System.out.println("\nColumn is full. Please choose a another number between 1 and 7.");
+                System.out.println("\nColumn is full. Please choosef another number between 1 and 7.");
                 column = -1; // Reset column to re-prompt
             }   
         }
